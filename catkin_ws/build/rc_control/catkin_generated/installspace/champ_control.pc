@@ -1,0 +1,8 @@
+prefix=/home/yc/catkin_ws/install
+
+Name: champ_control
+Description: Description of champ_control
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
