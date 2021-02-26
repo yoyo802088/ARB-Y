@@ -1,0 +1,38 @@
+<launch>
+    <!-- Launch Zed Camera -->
+    <include file="$(find zed_wrapper)/launch/zed.launch">
+		<arg name="camera_model"       value="zed" />
+		
+		<!-- Set TF frame of camera with relation to car center -->
+		<arg name="cam_pos_x"			value="0.1461" />		
+		<arg name="cam_pos_y"			value="-0.0254" />
+		<arg name="cam_pos_z"			value="0.0857" />
+	</include>
+
+    <!-- Launch RTABMap -->
+    <include file="$(find rtabmap_ros)/launch/champ_rtabmap.launch">
+
+        <arg name="localization"		value="false" />
+        <arg name="rgb_topic"			value="/zed/zed_node/rgb/image_rect_color" />
+        <arg name="depth_topic"			value="/zed/zed_node/depth/depth_registered" />
+        <arg name="camera_info_topic"	value="/zed/zed_node/rgb/camera_info" />
+        <arg name="frame_id"			value="base_link" />
+        <arg name="approx_sync"			value="false" />
+        <arg name="visual_odometry"		value="false" />
+        <arg name="odom_topic"			value="/zed/zed_node/odom" />
+
+	<!-- Output -->
+	<remap from="grid_map" to="map" />
+
+	</include> 
+
+	<!-- Launch Controler -->
+	<include file= "$(find donkey_car)/launch/keyboard_demo.launch">
+	</include>
+
+	<!-- Launch Move_Bass -->
+	<include file="$(find champ_control)/launch/move_base.launch" >
+	</include>
+	
+</launch>
+

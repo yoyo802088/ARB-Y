@@ -1,0 +1,19 @@
+<launch>
+
+   	<!-- Launch RTABMap -->
+	<include file="$(find zed_rtabmap_example)/launch/zed_rtabmap.launch">
+	</include> 
+	<!-- Launch PWM -->
+	<include file="$(find i2cpwm_board)/launch/i2cpwm_node.launch">
+	</include>
+
+	<!-- Launch Controler -->
+	<include file= "$(find donkey_car)/launch/keyboard_demo.launch">
+	</include>
+
+	<!-- Launch Move_Base -->
+	<include file="$(find champ_control)/launch/move_base.launch" >
+	</include>
+	
+</launch>
+
