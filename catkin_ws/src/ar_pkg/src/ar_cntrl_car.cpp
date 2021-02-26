@@ -2,6 +2,24 @@
 #include "ar_track_alvar_msgs/AlvarMarkers.h"
 #include "i2cpwm_board/ServoArray.h"
 
+void car_cmd(i2cpwm_board::ServoArray::ConstPtr& car_msg, step)
+{
+    // change PWM values here
+    double stop = 300;
+    double reverse = 290;
+
+    switch(step)
+    {
+        case 0:
+            car_msg.servo = 2;
+            car_msg.value = stop;
+        case 1:
+            car_msg.servo = 2;
+            // realizing this would probably continuously put car into reverse continuously
+            car_msg.value = reverse;
+    }
+}
+
 int main(int argc, char **argv)
 {
 	ros::init(argc, argv, "ar_car_cntrl");
@@ -19,13 +37,6 @@ int main(int argc, char **argv)
 
     // condition for how close cam should be to ar tag - arbitrary 0.5 value
     double close = 0.5;
-
-    // set steering (servo 1) and throttle (servo 2)
-    servo = msg.servo; 
-    value = msg.value;
-
-    // assuming 300 is neutral for both - change if necessary
-    double neutral = 300.0; 
 	
     // Running at 10Hz - an arbitrary rate 
 	ros::Rate loop_rate(10);
@@ -34,12 +45,11 @@ int main(int argc, char **argv)
     {
         // if z is close then stop & reverse
         if(z == close)){
-            neutral;
-            reverse;
+            car_cmd(markers, 0);
+            car_cmd(markers, 1);
         }
 
-        servo_pub.publish(something);
-        servo_pub.publish(something);
+        servo_pub.publish(markers);
         ros::spinOnce();
     }
 	return 0;
