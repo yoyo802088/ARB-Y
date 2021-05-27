@@ -24,6 +24,6 @@ The file needed will be "position_tracking.py".
 
 To start the process of detecting emergency, open a terminal and launch:
 
-     $ python3 position_tracking.py
+     $ python3 emergency_escape.py
      
 This will enable emergency escape afterwards, and the corresponding help messages will appear in the terminal.
