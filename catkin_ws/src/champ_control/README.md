@@ -1,7 +1,12 @@
 # Run the car
 This is a description of how to run the car.
 
-Before running anything on the github, make sure that the car is on and properly connected to the devices.
+## Installation
+
+Before running anything on the github, make sure that the car is on and properly connected to the devices and the repository is properly installed. 
+
+    $ git clone https://github.com/yoyo802088/EEC193AB-RoveCrest.git
+    
 
 First, launch i2cpwm to enable the motor connection between the board and the car.
 
@@ -20,7 +25,7 @@ This will open up rviz that displays the current position and generated map.
 The goals can be set either by clicking the "2D Nav Goal" button and dragging on the screen, or through code.
 
 # Emergency Escape
-The file needed will be "position_tracking.py".
+The file needed will be "emergency_escape.py".
 
 To start the process of detecting emergency, open a terminal and launch:
 
