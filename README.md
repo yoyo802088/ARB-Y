@@ -25,12 +25,13 @@ Designed for the rover to perform a fixed set of operations to attempt to "escap
     
 # Reports \& Presentations
 For a simple demo video, please watch [this video](https://www.youtube.com/watch?v=riW5-ti9QEk).
+
 For our poster presentation, refer to [this](./poster.pdf)
 
 # Contributions
 
-Yu-Shih Chen - Team lead, mainly contributed to the development of the pit detection feature and vSLAM integration.
-Wanyue Zhai - Main developer of the vSLAM \& sensor integration and emergency escape mechanism.
-May Eusebio - Main developer of the AR tag detection mechanism.
-Zeyuan Hou - Main developer of the emergency escape mechanism.
+- Yu-Shih Chen - Team lead, mainly contributed to the development of the pit detection feature and vSLAM integration.
+- Wanyue Zhai - Main developer of the vSLAM \& sensor integration and emergency escape mechanism.
+- May Eusebio - Main developer of the AR tag detection mechanism.
+- Zeyuan Hou - Main developer of the emergency escape mechanism.
 
